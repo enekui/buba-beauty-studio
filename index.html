@@ -276,6 +276,16 @@ button { cursor: pointer; border: none; font-family: inherit; }
 
 .nav.scrolled .nav-logo { color: var(--charcoal); }
 
+.nav-logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  border: 1.5px solid rgba(201,168,124,0.4);
+}
+
 .nav-links {
   display: flex;
   gap: 2.5rem;
@@ -1307,7 +1317,7 @@ button { cursor: pointer; border: none; font-family: inherit; }
 <!-- ================ NAVIGATION ================ -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Buba Beauty Studio</a>
+    <a href="#" class="nav-logo"><img src="img/logo-buba.jpg" alt="Buba Beauty Studio" class="nav-logo-img"> Buba Beauty Studio</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#galeria">Galería</a></li>
@@ -1366,7 +1376,7 @@ button { cursor: pointer; border: none; font-family: inherit; }
         </div>
       </div>
       <div class="intro-image reveal reveal-delay-2">
-        <img src="img/extensions-1.jpg" alt="Extensiones de pestañas en Buba Beauty Studio" loading="lazy">
+        <img src="img/carla-portrait.jpg" alt="Carla, fundadora de Buba Beauty Studio" loading="lazy">
       </div>
     </div>
   </div>
@@ -1522,24 +1532,24 @@ button { cursor: pointer; border: none; font-family: inherit; }
       <h2 class="section-title">Nuestro <em>trabajo</em></h2>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item reveal reveal-delay-1" data-img="img/lashes-1.jpg">
-        <img src="img/lashes-1.jpg" alt="Trabajo de pestañas" loading="lazy">
+      <div class="gallery-item reveal reveal-delay-1" data-img="img/inspiration-1.jpg">
+        <img src="img/inspiration-1.jpg" alt="Portfolio Buba Beauty Studio" loading="lazy">
         <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
       </div>
-      <div class="gallery-item reveal reveal-delay-2" data-img="img/lashes-2.jpg">
-        <img src="img/lashes-2.jpg" alt="Lifting de pestañas" loading="lazy">
+      <div class="gallery-item reveal reveal-delay-2" data-img="img/inspiration-2.jpg">
+        <img src="img/inspiration-2.jpg" alt="Trabajo de belleza" loading="lazy">
         <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
       </div>
-      <div class="gallery-item reveal reveal-delay-3" data-img="img/extensions-1.jpg">
-        <img src="img/extensions-1.jpg" alt="Extensiones de pestañas" loading="lazy">
+      <div class="gallery-item reveal reveal-delay-3" data-img="img/inspiration-3.jpg">
+        <img src="img/inspiration-3.jpg" alt="Resultado profesional" loading="lazy">
         <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
       </div>
-      <div class="gallery-item reveal reveal-delay-2" data-img="img/lashes-4.jpg">
-        <img src="img/lashes-4.jpg" alt="Detalle de pestañas" loading="lazy">
+      <div class="gallery-item reveal reveal-delay-2" data-img="img/inspiration-4.jpg">
+        <img src="img/inspiration-4.jpg" alt="Detalle de tratamiento" loading="lazy">
         <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
       </div>
-      <div class="gallery-item reveal reveal-delay-3" data-img="img/lashes-3.jpg">
-        <img src="img/lashes-3.jpg" alt="Resultado final pestañas" loading="lazy">
+      <div class="gallery-item reveal reveal-delay-3" data-img="img/lashes-1.jpg">
+        <img src="img/lashes-1.jpg" alt="Extensiones de pestañas" loading="lazy">
         <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
       </div>
     </div>
