@@ -1,0 +1,48 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# aws-email / Lambdas + Terraform artefactos locales
+aws-email/lambdas/node_modules/
+aws-email/lambdas/.build/
+aws-email/lambdas/dist/
+aws-email/.terraform/
+aws-email/.terraform.lock.hcl
+aws-email/*.tfstate
+aws-email/*.tfstate.*
+aws-email/*.tfout
+aws-email/*.tfvars
+aws-email/*.tfvars.json
+!aws-email/*.tfvars.example
+
+# Admin web
+admin/*.bak
+
+# ios-app (si en el futuro se unifica aquí)
+ios-app/node_modules/
+ios-app/www/
+ios-app/ios/Pods/
+ios-app/ios/App/Pods/
+ios-app/ios/build/
+ios-app/ios/DerivedData/
+
+# Artefactos firma Apple
+*.mobileprovision
+*.p12
+*.p8
+*.cer
+*.certSigningRequest
+
+# Secrets
+.env
+.env.local

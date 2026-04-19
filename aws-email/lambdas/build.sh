@@ -17,6 +17,7 @@ HANDLERS=(
   "unsubscribe"
   "bounce-complaint-handler"
   "send-campaign"
+  "admin-read"
 )
 
 # Ensure dependencies are installed (esbuild + aws-sdk types/runtime during bundling).
