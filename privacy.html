@@ -1,66 +1,241 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Política de privacidad — Buba Beauty Studio</title>
-<meta name="description" content="Política de privacidad de Buba Beauty Studio (web y app iOS).">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://bubabeautystudio.com/privacy.html">
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem; color: #2D2D2D; background: #FAF7F4; line-height: 1.65; }
-  h1 { font-family: Georgia, serif; font-weight: 400; font-size: 2rem; margin: 0 0 0.5rem; }
-  h2 { font-family: Georgia, serif; font-weight: 400; font-size: 1.35rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid #E8D5C4; padding-bottom: 0.4rem; }
-  p, li { color: #3a3530; }
-  a { color: #A8894F; }
-  .meta { color: #6B6058; font-size: 0.9rem; margin-bottom: 1.5rem; }
-  ul { padding-left: 1.2rem; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de privacidad — Buba Beauty Studio</title>
+  <meta name="description" content="Política de privacidad de Buba Beauty Studio — A Coruña.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF7F4;
+      --gold: #C9A87C;
+      --gold-dark: #A8894F;
+      --rose: #E8D5C4;
+      --charcoal: #1A1A1A;
+      --text: #2D2D2D;
+      --text-soft: #6B6058;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .legal-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    .legal-brand {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.6rem;
+      letter-spacing: 0.02em;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-brand a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .legal-meta {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.55rem;
+      color: var(--charcoal);
+      margin: 2.75rem 0 0.75rem;
+    }
+
+    p, li {
+      color: var(--text);
+    }
+
+    a {
+      color: var(--gold-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover { color: var(--charcoal); }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    li + li { margin-top: 0.35rem; }
+
+    .legal-divider {
+      border: 0;
+      border-top: 1px solid var(--rose);
+      margin: 3.5rem 0 2rem;
+    }
+
+    .legal-back {
+      display: inline-block;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      padding: 0.75rem 1.25rem;
+      border: 1px solid var(--charcoal);
+      border-radius: 2px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .legal-back:hover {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    @media (max-width: 600px) {
+      .legal-wrap { padding: 2.5rem 1.2rem 4rem; }
+      h1 { font-size: 2.1rem; }
+      h2 { font-size: 1.35rem; }
+    }
+  </style>
 </head>
 <body>
+  <main class="legal-wrap">
+    <div class="legal-brand"><a href="/">Buba Beauty Studio</a></div>
+    <h1>Política de privacidad</h1>
+    <p class="legal-meta">Última actualización: abril 2026</p>
 
-<h1>Política de privacidad</h1>
-<p class="meta">Última actualización: abril 2026 · Aplica a la web bubabeautystudio.com y a la aplicación iOS «Buba Beauty Studio».</p>
+    <p>
+      En Buba Beauty Studio respetamos tu privacidad y tratamos tus datos conforme al Reglamento (UE) 2016/679
+      (RGPD) y a la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales.
+      Esta política describe qué datos recogemos, para qué los usamos y qué derechos tienes sobre ellos.
+    </p>
 
-<p>En <strong>Buba Beauty Studio</strong> (Rúa Curtis, 8, bajo, 15009 A Coruña, España) respetamos tu privacidad. Este documento explica qué datos tratamos cuando usas nuestra web o nuestra app iOS y con qué finalidad.</p>
+    <h2>1. Responsable del tratamiento</h2>
+    <p>
+      Responsable: <strong>Buba Beauty Studio</strong> — salón de belleza ubicado en A Coruña (España).
+      Para cualquier consulta sobre tus datos puedes escribirnos a través de los canales de contacto publicados
+      en nuestra página principal.
+    </p>
 
-<h2>1. Responsable del tratamiento</h2>
-<ul>
-  <li><strong>Nombre comercial:</strong> Buba Beauty Studio</li>
-  <li><strong>Dirección:</strong> Rúa Curtis, 8, bajo, 15009 A Coruña, Galicia, España</li>
-  <li><strong>Teléfono:</strong> +34 604 028 359</li>
-  <li><strong>Email de contacto:</strong> bubabeautystudio@gmail.com</li>
-</ul>
+    <h2>2. Datos que recogemos</h2>
+    <ul>
+      <li>Datos identificativos básicos que nos facilitas al reservar (nombre, teléfono, email).</li>
+      <li>Dirección de correo electrónico cuando te suscribes voluntariamente a nuestra lista de novedades.</li>
+      <li>Datos técnicos de navegación (dirección IP, tipo de dispositivo) estrictamente necesarios para el
+      funcionamiento del sitio.</li>
+    </ul>
 
-<h2>2. Qué datos recogemos</h2>
-<p>La web y la app están diseñadas para funcionar sin registro. No pedimos nombre, email, ni datos identificativos para navegar o consultar los servicios.</p>
-<ul>
-  <li><strong>En la web:</strong> no usamos cookies de marketing, ni analytics de terceros, ni píxeles de seguimiento.</li>
-  <li><strong>En la app iOS:</strong> si aceptas recibir notificaciones push, se genera un <em>device token</em> técnico que OneSignal (nuestro proveedor de notificaciones) usa para enviarte promociones o recordatorios. Este token no permite identificarte personalmente.</li>
-  <li><strong>Reservas:</strong> las reservas se procesan a través de <a href="https://booksy.com/">Booksy</a> (plataforma externa). Al pulsar «Reservar» se te redirige allí; el tratamiento de tus datos de reserva se rige por la <a href="https://booksy.com/es-es/privacy-policy">política de privacidad de Booksy</a>.</li>
-</ul>
+    <h2>3. Finalidad y base legal</h2>
+    <ul>
+      <li>Gestionar tus reservas y prestar el servicio contratado (ejecución de un contrato).</li>
+      <li>Responder a consultas que nos plantees (interés legítimo).</li>
+      <li>Enviarte comunicaciones comerciales solo si has dado tu consentimiento expreso (consentimiento).</li>
+      <li>Cumplir con las obligaciones legales aplicables (obligación legal).</li>
+    </ul>
 
-<h2>3. Finalidad y base legal</h2>
-<p>Los datos técnicos de la app (device token) se tratan con tu consentimiento expreso (al aceptar el diálogo de iOS «Buba Beauty Studio quiere enviarte notificaciones»). La finalidad es enviarte información puntual sobre promociones, novedades de servicios o recordatorios del salón.</p>
+    <h2>4. Conservación</h2>
+    <p>
+      Los datos de reservas se conservan durante el tiempo necesario para prestar el servicio y, posteriormente,
+      durante los plazos legales aplicables. Los datos de contacto usados para comunicaciones comerciales se
+      conservan hasta que la usuaria retire su consentimiento.
+    </p>
 
-<h2>4. Conservación</h2>
-<p>El device token se conserva mientras mantengas la app instalada y con notificaciones activadas. Puedes revocar el consentimiento en cualquier momento desde <em>Ajustes → Notificaciones → Buba Beauty Studio</em> de iOS, o desinstalando la app.</p>
+    <h2>5. Destinatarios</h2>
+    <p>
+      No vendemos ni cedemos tus datos a terceros. Únicamente acceden a ellos proveedores que actúan como
+      encargados del tratamiento, con contrato firmado y garantías de seguridad: la plataforma de reservas
+      Booksy, el servicio de notificaciones push OneSignal y los proveedores de infraestructura técnica
+      descritos en la sección 8.
+    </p>
 
-<h2>5. Destinatarios</h2>
-<p>No cedemos tus datos a terceros con fines comerciales. Los encargados de tratamiento con los que trabajamos son:</p>
-<ul>
-  <li><strong>OneSignal</strong> (One Signal Inc., EE.UU.) — envío técnico de notificaciones push. Transferencia internacional amparada en Cláusulas Contractuales Tipo de la UE.</li>
-  <li><strong>Booksy</strong> (si decides reservar) — gestión de citas.</li>
-  <li><strong>Apple Inc.</strong> — distribución de la app vía App Store y envío técnico vía APNs.</li>
-</ul>
+    <h2>6. Derechos</h2>
+    <p>
+      Puedes ejercer en cualquier momento los derechos de acceso, rectificación, supresión, oposición,
+      limitación del tratamiento y portabilidad, así como retirar el consentimiento prestado. Para ello basta
+      con contactarnos por los canales habituales. Tienes también derecho a presentar una reclamación ante la
+      Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).
+    </p>
 
-<h2>6. Derechos</h2>
-<p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiéndonos a <a href="mailto:bubabeautystudio@gmail.com">bubabeautystudio@gmail.com</a>. También puedes presentar una reclamación ante la <a href="https://www.aepd.es/">Agencia Española de Protección de Datos</a>.</p>
+    <h2>7. Cambios en esta política</h2>
+    <p>
+      Podemos actualizar esta política cuando sea necesario por motivos legales, técnicos u operativos.
+      La versión vigente será siempre la publicada en esta página, con la fecha de última actualización
+      indicada al inicio.
+    </p>
 
-<h2>7. Cambios en esta política</h2>
-<p>Si actualizamos esta política, publicaremos la nueva versión en esta misma URL. Te recomendamos revisarla periódicamente.</p>
+    <h2>8. Marketing por email</h2>
+    <p>
+      Si te suscribes voluntariamente a nuestra lista de novedades desde el formulario del sitio, trataremos
+      tu dirección de correo electrónico con las siguientes condiciones:
+    </p>
+    <ul>
+      <li>
+        <strong>Finalidad:</strong> envío de promociones, novedades y comunicaciones comerciales relacionadas
+        con los servicios de Buba Beauty Studio.
+      </li>
+      <li>
+        <strong>Base legal:</strong> consentimiento expreso otorgado mediante un proceso de doble opt-in
+        (confirmación por email tras la suscripción inicial). Sin esa confirmación no se enviará ninguna
+        comunicación comercial.
+      </li>
+      <li>
+        <strong>Encargados del tratamiento:</strong> la infraestructura de envío está alojada en
+        <strong>Amazon Web Services (AWS)</strong>, concretamente en el servicio <em>Amazon Simple Email
+        Service (SES)</em> desplegado en la región <em>eu-west-1 (Irlanda)</em>. AWS actúa como encargado
+        del tratamiento sujeto a las cláusulas contractuales GDPR del <em>AWS Data Processing Addendum</em>.
+      </li>
+      <li>
+        <strong>Conservación:</strong> los datos incluidos en la lista de distribución se conservan hasta que
+        la usuaria se da de baja. La baja puede solicitarse en cualquier momento haciendo clic en el enlace de
+        cancelación de suscripción presente en cada email que enviamos.
+      </li>
+      <li>
+        <strong>Retirada del consentimiento:</strong> es un derecho que puedes ejercer en cualquier momento,
+        sin necesidad de justificación y sin coste. La retirada no afectará a la licitud del tratamiento
+        realizado con anterioridad.
+      </li>
+      <li>
+        <strong>Gestión conjunta con otros canales:</strong> la suscripción por email es independiente de los
+        canales de notificaciones push móviles (gestionados con <em>OneSignal</em>) y de las reservas
+        (gestionadas con <em>Booksy</em>). Darse de baja de uno de los canales no implica automáticamente la
+        baja en los otros; cada uno dispone de su propio mecanismo de cancelación.
+      </li>
+    </ul>
 
-<p style="margin-top: 2.5rem;"><a href="/">← Volver al inicio</a></p>
-
+    <hr class="legal-divider">
+    <a class="legal-back" href="/">Volver al inicio</a>
+  </main>
 </body>
 </html>

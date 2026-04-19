@@ -15,6 +15,24 @@ yarn-debug.log*
 yarn-error.log*
 
 # ============================================================
+# aws-email — Lambdas + Terraform artefactos locales
+# ============================================================
+aws-email/lambdas/node_modules/
+aws-email/lambdas/.build/
+aws-email/lambdas/dist/
+aws-email/.terraform/
+aws-email/.terraform.lock.hcl
+aws-email/*.tfstate
+aws-email/*.tfstate.*
+aws-email/*.tfout
+aws-email/*.tfvars
+aws-email/*.tfvars.json
+!aws-email/*.tfvars.example
+
+# Admin web
+admin/*.bak
+
+# ============================================================
 # ios-app / Capacitor
 # ============================================================
 ios-app/node_modules/
