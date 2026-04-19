@@ -1309,6 +1309,21 @@ button { cursor: pointer; border: none; font-family: inherit; }
   .gallery-item:nth-child(n) { grid-column: 1; grid-row: auto; }
   .gallery-item img { height: 280px; }
 }
+
+/* ---- Footer subscribe form ---- */
+.subscribe-form { margin: 2rem 0 1rem; display: grid; gap: 0.75rem; max-width: 420px; }
+.subscribe-form h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.4rem; color: var(--charcoal); margin: 0; }
+.subscribe-form p { font-size: 0.9rem; color: var(--text-soft); margin: 0; }
+.subscribe-form input[type="email"] { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--rose); background: var(--white); font-family: inherit; font-size: 0.95rem; border-radius: 2px; }
+.subscribe-form input[type="email"]:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201, 168, 124, 0.2); }
+.subscribe-form .consent { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.8rem; color: var(--text-soft); line-height: 1.5; }
+.subscribe-form .consent a { color: var(--gold-dark); text-decoration: underline; text-underline-offset: 2px; }
+.subscribe-form button { padding: 0.85rem 1.5rem; background: var(--charcoal); color: var(--cream); border: none; font-family: inherit; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease; border-radius: 2px; }
+.subscribe-form button:hover:not(:disabled) { background: var(--gold-dark); }
+.subscribe-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+.subscribe-form .subscribe-status { font-size: 0.85rem; min-height: 1.2rem; }
+.subscribe-form .subscribe-status.is-success { color: #2d7a4b; }
+.subscribe-form .subscribe-status.is-error { color: #b94a48; }
 </style>
 </head>
 
@@ -1681,6 +1696,19 @@ button { cursor: pointer; border: none; font-family: inherit; }
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">Buba Beauty Studio</div>
+
+      <form class="subscribe-form" id="subscribeForm" novalidate>
+        <h3>Apúntate a nuestras promos</h3>
+        <p>Una vez al mes. Sin spam.</p>
+        <input type="email" name="email" placeholder="tu@email.com" required aria-label="Email">
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          <span>He leído la <a href="/privacy.html">política de privacidad</a> y acepto recibir comunicaciones comerciales.</span>
+        </label>
+        <button type="submit">Apuntarme</button>
+        <div class="subscribe-status" role="status" aria-live="polite"></div>
+      </form>
+
       <ul class="footer-links">
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#galeria">Galería</a></li>
@@ -1769,6 +1797,9 @@ button { cursor: pointer; border: none; font-family: inherit; }
 
 })();
 </script>
+
+<script>window.BUBA_API_BASE = "__API_BASE__";</script>
+<script defer src="js/subscribe.js"></script>
 
 </body>
 </html>
