@@ -125,7 +125,11 @@ resource "aws_cognito_user" "admin" {
 }
 
 # Output del domain (usado por outputs.tf principal).
+# Emitimos la URL completa (no solo el prefijo) porque admin.js la concatena
+# directamente con "/login" o "/oauth2/token" — si se emite solo el subdominio,
+# la URL resultante es relativa y el navegador la resuelve contra el propio
+# host del admin site, rompiendo el flujo de auth.
 output "cognito_hosted_ui_domain" {
-  description = "Dominio Cognito para Hosted UI (login/signup)."
-  value       = aws_cognito_user_pool_domain.admin.domain
+  description = "URL completa del Cognito Hosted UI (incluye https:// + región)."
+  value       = "https://${aws_cognito_user_pool_domain.admin.domain}.auth.${var.aws_region}.amazoncognito.com"
 }
