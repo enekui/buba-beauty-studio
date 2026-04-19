@@ -45,6 +45,8 @@ resource "aws_sesv2_configuration_set" "main" {
 
   tracking_options {
     custom_redirect_domain = var.root_domain
+    # AWS defaultea a OPTIONAL; lo fijamos para que el plan quede limpio.
+    https_policy = "OPTIONAL"
   }
 
   vdm_options {
