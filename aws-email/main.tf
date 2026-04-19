@@ -26,19 +26,15 @@ terraform {
     }
   }
 
-  # Backend S3 ya existe (bucket buba-terraform-state-372370374261 + tabla
-  # buba-terraform-locks creados vía CLI) pero NO se activa aquí hasta que
-  # el state sea reconstruido por imports — ver
-  # .planning/phases/01-aws-email-hardening/STATE-LOSS-INCIDENT.md para el
-  # plan de recuperación. Activar este bloque en ese momento.
-  #
-  # backend "s3" {
-  #   bucket         = "buba-terraform-state-372370374261"
-  #   key            = "aws-email/terraform.tfstate"
-  #   region         = "eu-west-1"
-  #   dynamodb_table = "buba-terraform-locks"
-  #   encrypt        = true
-  # }
+  # Backend S3 activado tras reconstrucción del state vía terraform import
+  # (ver .planning/phases/01-aws-email-hardening/STATE-LOSS-INCIDENT.md).
+  backend "s3" {
+    bucket         = "buba-terraform-state-372370374261"
+    key            = "aws-email/terraform.tfstate"
+    region         = "eu-west-1"
+    dynamodb_table = "buba-terraform-locks"
+    encrypt        = true
+  }
 }
 
 provider "aws" {

@@ -8,6 +8,16 @@ resource "random_string" "cognito_domain_suffix" {
   upper   = false
   numeric = true
   special = false
+
+  # terraform import no permite fijar estos atributos al importar un
+  # random_string; el recurso se importó con defaults (special=true, upper=true)
+  # tras la recuperación del state en STATE-LOSS-INCIDENT. El valor real
+  # (`0nry6h`) es igualmente válido bajo ambas configuraciones, así que
+  # ignoramos los diffs de flags para no forzar replacement en cascada del
+  # Cognito user pool domain, client y usuarios admin.
+  lifecycle {
+    ignore_changes = [length, lower, upper, numeric, special, min_lower, min_upper, min_numeric, min_special]
+  }
 }
 
 resource "aws_cognito_user_pool" "admin" {
@@ -104,6 +114,13 @@ resource "aws_cognito_user_pool_client" "admin" {
     id_token      = "minutes"
     refresh_token = "days"
   }
+
+  # terraform import no puede leer `generate_secret` de AWS (es write-only en
+  # CreateUserPoolClient) y lo deja null en state; al plan fuerza replacement.
+  # El recurso real no tiene secret (SPA), así que ignoramos el diff.
+  lifecycle {
+    ignore_changes = [generate_secret]
+  }
 }
 
 # Usuarios admin iniciales. El valor por defecto es lista vacía — si no
@@ -118,6 +135,14 @@ resource "aws_cognito_user" "admin" {
   attributes = {
     email          = each.value
     email_verified = "true"
+  }
+
+  # Con username_attributes=["email"] en el pool, AWS usa el email para login
+  # pero internamente guarda un UUID como username. terraform import trae el
+  # UUID al state y entra en conflicto con el email declarado. Ignoramos el
+  # diff para evitar replacement del usuario real.
+  lifecycle {
+    ignore_changes = [username]
   }
 }
 
