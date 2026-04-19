@@ -1,0 +1,27 @@
+{
+  "name": "buba-beauty-studio-ios",
+  "version": "0.1.0",
+  "description": "App iOS de Buba Beauty Studio basada en Capacitor: wrapper hibrido de la web bubabeautystudio.com",
+  "private": true,
+  "scripts": {
+    "build:web": "bash scripts/sync-web.sh",
+    "ios:sync": "npm run build:web && cap sync ios",
+    "ios:open": "cap open ios",
+    "ios:run": "npm run ios:sync && cap run ios",
+    "assets:generate": "capacitor-assets generate --ios"
+  },
+  "dependencies": {
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/browser": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/ios": "^6.0.0",
+    "@capacitor/share": "^6.0.0",
+    "@capacitor/splash-screen": "^6.0.0",
+    "@capacitor/status-bar": "^6.0.0",
+    "onesignal-cordova-plugin": "^5.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.0.0"
+  }
+}

@@ -1,4 +1,4 @@
-# OS
+# Sistema operativo
 .DS_Store
 Thumbs.db
 
@@ -11,8 +11,12 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# aws-email / Lambdas + Terraform artefactos locales
+# ============================================================
+# aws-email — Lambdas + Terraform artefactos locales
+# ============================================================
 aws-email/lambdas/node_modules/
 aws-email/lambdas/.build/
 aws-email/lambdas/dist/
@@ -28,21 +32,30 @@ aws-email/*.tfvars.json
 # Admin web
 admin/*.bak
 
-# ios-app (si en el futuro se unifica aquí)
+# ============================================================
+# ios-app / Capacitor
+# ============================================================
 ios-app/node_modules/
 ios-app/www/
+ios-app/.capacitor-sync-snapshot
 ios-app/ios/Pods/
 ios-app/ios/App/Pods/
+ios-app/ios/App/output/
 ios-app/ios/build/
 ios-app/ios/DerivedData/
+ios-app/ios/App/App.xcworkspace/xcuserdata/
+ios-app/ios/App/App.xcodeproj/xcuserdata/
+ios-app/ios/App/App.xcodeproj/project.xcworkspace/xcuserdata/
 
-# Artefactos firma Apple
+# Artefactos de firma Apple (NUNCA commitear)
 *.mobileprovision
 *.p12
 *.p8
 *.cer
 *.certSigningRequest
 
-# Secrets
+# Entornos con secretos locales
 .env
 .env.local
+ios-app/.env
+ios-app/.env.local

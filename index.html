@@ -1324,6 +1324,49 @@ button { cursor: pointer; border: none; font-family: inherit; }
 .subscribe-form .subscribe-status { font-size: 0.85rem; min-height: 1.2rem; }
 .subscribe-form .subscribe-status.is-success { color: #2d7a4b; }
 .subscribe-form .subscribe-status.is-error { color: #b94a48; }
+
+/* ============================================================
+   NATIVE APP (Capacitor/iOS) — solo visible dentro de la app
+   Los estilos se activan al añadir la clase .is-native-ios al <html>
+   desde js/native-bridge.js cuando window.Capacitor.isNativePlatform()
+   ============================================================ */
+.native-quick-actions {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  background: rgba(13, 13, 13, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 999px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  z-index: 2000;
+}
+.native-quick-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--charcoal);
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: transform 0.18s var(--ease-out-quart), background 0.18s ease;
+}
+.native-quick-actions a:active { transform: scale(0.92); background: var(--rose); }
+.native-quick-actions .nqa-whatsapp { background: #25D366; color: #fff; }
+.native-quick-actions .nqa-maps { background: var(--gold); color: var(--white); }
+
+/* Deja hueco al final del body para que la barra flotante no tape el footer */
+html.is-native-ios body { padding-bottom: 5rem; }
+/* Oculta elementos puramente navegacionales dentro de la app (evita duplicar
+   con la barra nativa). Por ahora solo se aplica al footer copy para no perder links). */
+html.is-native-ios .nav { padding-top: env(safe-area-inset-top, 0px); }
 </style>
 </head>
 
@@ -1798,6 +1841,18 @@ button { cursor: pointer; border: none; font-family: inherit; }
 })();
 </script>
 
+<!-- Barra flotante de acciones nativas (solo visible en la app iOS). -->
+<div id="native-quick-actions" class="native-quick-actions" hidden>
+  <a href="tel:+34604028359" class="nqa-call" aria-label="Llamar al salón"><i class="fa-solid fa-phone"></i></a>
+  <a href="https://wa.me/34604028359" class="nqa-whatsapp" aria-label="Escribir por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="https://maps.apple.com/?daddr=R%C3%BAa+Curtis+8%2C+15009+A+Coru%C3%B1a" class="nqa-maps" aria-label="Ver en Apple Maps"><i class="fa-solid fa-location-dot"></i></a>
+</div>
+
+<!-- Puente Capacitor: no-op en navegador; engancha plugins nativos dentro de la app iOS. -->
+<script defer src="js/native-bridge.js"></script>
+<script defer src="js/push.js"></script>
+
+<!-- API pública de email marketing (AWS API Gateway + Lambda + SES). -->
 <script>window.BUBA_API_BASE = "https://81mmdkibg8.execute-api.eu-west-1.amazonaws.com/prod";</script>
 <script defer src="js/subscribe.js"></script>
 
