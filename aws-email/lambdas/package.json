@@ -1,0 +1,21 @@
+{
+  "name": "buba-beauty-email-lambdas",
+  "version": "1.0.0",
+  "description": "Lambda handlers for Buba Beauty Studio email marketing stack",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "bash ./build.sh"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sesv2": "^3.620.0",
+    "@aws-sdk/client-dynamodb": "^3.620.0",
+    "@aws-sdk/lib-dynamodb": "^3.620.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0"
+  }
+}
