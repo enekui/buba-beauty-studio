@@ -28,6 +28,7 @@ resource "aws_kms_key" "main" {
         Principal = {
           Service = [
             "sns.amazonaws.com",
+            "ses.amazonaws.com",
             "dynamodb.amazonaws.com",
             "logs.${var.aws_region}.amazonaws.com",
           ]
