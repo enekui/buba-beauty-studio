@@ -26,11 +26,14 @@ terraform {
     }
   }
 
-  # Rellenar al adoptar en el entorno del cliente. Se deja comentado para
-  # que el primer `terraform init` funcione en local sin state remoto.
+  # Backend S3 ya existe (bucket buba-terraform-state-372370374261 + tabla
+  # buba-terraform-locks creados vía CLI) pero NO se activa aquí hasta que
+  # el state sea reconstruido por imports — ver
+  # .planning/phases/01-aws-email-hardening/STATE-LOSS-INCIDENT.md para el
+  # plan de recuperación. Activar este bloque en ese momento.
   #
   # backend "s3" {
-  #   bucket         = "buba-terraform-state"
+  #   bucket         = "buba-terraform-state-372370374261"
   #   key            = "aws-email/terraform.tfstate"
   #   region         = "eu-west-1"
   #   dynamodb_table = "buba-terraform-locks"
