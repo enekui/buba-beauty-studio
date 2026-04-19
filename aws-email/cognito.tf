@@ -17,15 +17,12 @@ resource "aws_cognito_user_pool" "admin" {
     allow_admin_create_user_only = true
 
     invite_message_template {
-      email_subject = "Invitación — Admin de Buba Beauty Studio"
-      email_message = <<-EOT
-        <p>Hola,</p>
-        <p>Has sido añadido como administrador del panel de email marketing de Buba Beauty Studio.</p>
-        <p>Usuario: <strong>{username}</strong></p>
-        <p>Contraseña temporal: <strong>{####}</strong></p>
-        <p>Accede aquí: <a href="https://${local.admin_fqdn}">https://${local.admin_fqdn}</a></p>
-      EOT
-      sms_message   = "Buba Admin. Usuario: {username} - Contraseña temporal: {####}"
+      email_subject = "Bienvenida al panel de Buba Beauty Studio"
+      # HTML branded del email de invitación (paleta cream/gold/charcoal,
+      # Cormorant Garamond + DM Sans con fallback Georgia/sans). Tokens
+      # Cognito: {username} y {####} (contraseña temporal).
+      email_message = file("${path.module}/templates/cognito_invite.html")
+      sms_message   = "Buba Admin. Usuario: {username} - Contrasena temporal: {####}"
     }
   }
 
