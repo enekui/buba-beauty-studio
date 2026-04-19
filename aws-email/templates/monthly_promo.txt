@@ -1,0 +1,32 @@
+BUBA BEAUTY STUDIO
+==================
+
+{{hero_title}}
+
+{{hero_subtitle}}
+
+---
+
+{{service1_name}} — {{service1_price}}
+{{service1_desc}}
+
+{{service2_name}} — {{service2_price}}
+{{service2_desc}}
+
+{{service3_name}} — {{service3_price}}
+{{service3_desc}}
+
+---
+
+Reservar en Booksy:
+{{cta_url}}
+
+---
+
+Buba Beauty Studio
+Rúa Curtis, 8 · 15009 A Coruña
++34 604 028 359
+Instagram: https://www.instagram.com/bubabeautystudio/
+
+Cancelar suscripción: {{amazonSESUnsubscribeUrl}}
+Gestionar preferencias: {{amazonSESListManagementUrl}}

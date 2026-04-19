@@ -1,0 +1,23 @@
+BUBA BEAUTY STUDIO
+==================
+
+Confirma tu suscripción
+
+Hola,
+
+Gracias por apuntarte a las novedades de Buba Beauty Studio. Confirma tu email entrando en el siguiente enlace — así nos aseguramos de que eres tú.
+
+Confirmar suscripción:
+{{confirm_url}}
+
+Este enlace expira en {{confirm_expires_in}}. Si no fuiste tú, ignora este email.
+
+---
+
+Buba Beauty Studio
+Rúa Curtis, 8 · 15009 A Coruña
++34 604 028 359
+Instagram: https://www.instagram.com/bubabeautystudio/
+
+Cancelar suscripción: {{amazonSESUnsubscribeUrl}}
+Gestionar preferencias: {{amazonSESListManagementUrl}}
