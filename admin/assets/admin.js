@@ -74,7 +74,8 @@
       + "&scope=" + encodeURIComponent("openid email")
       + "&redirect_uri=" + encodeURIComponent(cfg.redirectUri)
       + "&code_challenge=" + challenge
-      + "&code_challenge_method=S256";
+      + "&code_challenge_method=S256"
+      + "&ui_locales=es";
     window.location.assign(url);
   }
 
@@ -88,7 +89,8 @@
     const base = (cfg.redirectUri || "").replace(/\/callback\.html$/, "/");
     const url = domain + "/logout"
       + "?client_id=" + encodeURIComponent(cfg.cognitoClientId)
-      + "&logout_uri=" + encodeURIComponent(base);
+      + "&logout_uri=" + encodeURIComponent(base)
+      + "&ui_locales=es";
     window.location.assign(url);
   }
 

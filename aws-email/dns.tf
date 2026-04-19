@@ -66,3 +66,36 @@ resource "aws_route53_record" "mail_from_spf" {
   ttl     = 3600
   records = ["v=spf1 include:amazonses.com -all"]
 }
+
+################################################################################
+# WorkMail — registros DNS del buzón info@bubabeautystudio.com
+#
+# La organización WorkMail (m-d5bde89b64194df8814b016c13823c11) y el usuario
+# info se gestionan fuera de Terraform (el AWS provider no expone todavía
+# aws_workmail_*). Ver aws-email/WORKMAIL.md para el bootstrap manual.
+# Los tokens DKIM son los mismos de SES (WorkMail reutiliza la identity SES).
+################################################################################
+
+resource "aws_route53_record" "workmail_mx" {
+  zone_id = data.aws_route53_zone.root.zone_id
+  name    = var.root_domain
+  type    = "MX"
+  ttl     = 3600
+  records = ["10 inbound-smtp.${var.aws_region}.amazonaws.com"]
+}
+
+resource "aws_route53_record" "workmail_verification" {
+  zone_id = data.aws_route53_zone.root.zone_id
+  name    = "_amazonses.${var.root_domain}"
+  type    = "TXT"
+  ttl     = 3600
+  records = ["8Z+7AnaveGyrtHOm1B4ly/kzqj2PnEDCBMB8Gqd7jwg="]
+}
+
+resource "aws_route53_record" "workmail_autodiscover" {
+  zone_id = data.aws_route53_zone.root.zone_id
+  name    = "autodiscover.${var.root_domain}"
+  type    = "CNAME"
+  ttl     = 3600
+  records = ["autodiscover.mail.${var.aws_region}.awsapps.com"]
+}
